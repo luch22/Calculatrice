@@ -1,0 +1,128 @@
+﻿<Window x:Class="WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <TabControl>
+        <TabItem Header="Accueil">
+
+            <Canvas Width="auto" Height="auto">
+                <Canvas.Background>
+                    <RadialGradientBrush GradientOrigin="0.5,0.5" RadiusX="0.125" RadiusY="0.125" SpreadMethod="Repeat">
+                        <GradientStop Color="#ff7575" Offset="0"></GradientStop>
+                        <GradientStop Color="#ffff75" Offset="0.25"></GradientStop>
+                        <GradientStop Color="#a0ff75" Offset="0.5"></GradientStop>
+                        <GradientStop Color="#5075ff" Offset="0.75"></GradientStop>
+                        <GradientStop Color="#a075ff" Offset="1"></GradientStop>
+                    </RadialGradientBrush>
+                </Canvas.Background>
+                <TextBox 
+                    Name="accueil" HorizontalAlignment="Center"
+                    VerticalAlignment="Center" IsReadOnly="True" 
+                    FontFamily="MontSerrat" FontSize="25" Text="VOICI MA CALCULATRICE"
+                    Canvas.Right="250" Canvas.Top="180">
+                </TextBox>
+            </Canvas>
+        </TabItem>
+        <TabItem Header="Calculatrice">
+            <Canvas Width="auto" Height="auto">
+                <Canvas.Background>
+                    <RadialGradientBrush GradientOrigin="1,1" RadiusX="0.95" RadiusY="0.65" SpreadMethod="Reflect">
+                        <GradientStop Color="#011f4b" Offset="0"></GradientStop>
+                        <GradientStop Color="#03396c" Offset="0.25"></GradientStop>
+                        <GradientStop Color="#005b96" Offset="0.5"></GradientStop>
+                        <GradientStop Color="#6497b1" Offset="0.75"></GradientStop>
+                        <GradientStop Color="#b3cde0" Offset="1"></GradientStop>
+                    </RadialGradientBrush>
+                </Canvas.Background>
+
+
+                <Border BorderBrush="#636363" CornerRadius="6" BorderThickness="5.5">
+                    <Grid Width="225" Height="225" VerticalAlignment="Center" 
+                          HorizontalAlignment="Center" Margin="1,1" Background="Gray">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="45"></ColumnDefinition>
+                            <ColumnDefinition Width="45"></ColumnDefinition>
+                            <ColumnDefinition Width="45"></ColumnDefinition>
+                            <ColumnDefinition Width="45"></ColumnDefinition>
+                            <ColumnDefinition Width="45"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="45"></RowDefinition>
+                            <RowDefinition Height="45"></RowDefinition>
+                            <RowDefinition Height="45"></RowDefinition>
+                            <RowDefinition Height="45"></RowDefinition>
+                            <RowDefinition Height="45"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock 
+                            Width="225" Height="45"
+                            Grid.ColumnSpan="5" FontSize="15"  
+                            Text="TEST CALC" TextAlignment="Right" 
+                            TextWrapping="NoWrap" Background="White" 
+                            FontFamily="consolas" FontWeight="Heavy" Padding="2,10"/>
+                        <Button Grid.Column="0" Grid.Row="1" Content="7" 
+                                BorderBrush="LightSkyBlue" BorderThickness="3.2"></Button>
+                        <Button Grid.Column="0" Grid.Row="2" Content="4" 
+                                BorderBrush="LightSkyBlue" BorderThickness="3.2"></Button>
+                        <Button Grid.Column="0" Grid.Row="3" Content="1" 
+                                BorderBrush="LightSkyBlue" BorderThickness="3.2"></Button>
+                        <Button Grid.Column="1" Grid.Row="1" Content="8"
+                                BorderBrush="LightSkyBlue" BorderThickness="3.2"></Button>
+                        <Button Grid.Column="1" Grid.Row="2" Content="5" 
+                                BorderBrush="LightSkyBlue" BorderThickness="3.2"></Button>
+                        <Button Grid.Column="1" Grid.Row="3" Content="2"
+                                BorderBrush="LightSkyBlue" BorderThickness="3.2"></Button>
+                        <Button Grid.Column="2" Grid.Row="1" Content="9"
+                                BorderBrush="LightSkyBlue" BorderThickness="3.2"></Button>
+                        <Button Grid.Column="2" Grid.Row="2" Content="6" 
+                                BorderBrush="LightSkyBlue" BorderThickness="3.2"></Button>
+                        <Button Grid.Column="2" Grid.Row="3" Content="3" 
+                                BorderBrush="LightSkyBlue" BorderThickness="3.2"></Button>
+                        <Button Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Content="0" 
+                                BorderBrush="LightSkyBlue" BorderThickness="3.2"></Button>
+                        <Button Grid.Column="2" Grid.Row="4" Content="." 
+                                BorderBrush="LightSkyBlue" BorderThickness="3.2"></Button>
+                        <Button Grid.Column="3" Grid.Row="1" Content="-" 
+                                BorderBrush="Gray" BorderThickness="3.2"></Button>
+                        <Button Grid.Column="3" Grid.Row="2" Content="+" 
+                                BorderBrush="Gray" BorderThickness="3.2"></Button>
+                        <Button Grid.Column="4" Grid.Row="2" Content="÷" 
+                                BorderBrush="Gray" BorderThickness="3.2"></Button>
+                        <Button Grid.Column="4" Grid.Row="1" Content="×" 
+                                BorderBrush="Gray" BorderThickness="3.2"></Button>
+                        <Button Grid.Column="4" Grid.Row="4" Content="%"></Button>
+                        <Button Grid.Column="4" Grid.Row="3" Content="C" Foreground="White" 
+                                Background="Red" BorderBrush="#920707" 
+                                BorderThickness="3.2"></Button>
+                        <Button Grid.Column="3" Grid.Row="3" Content="Enter" Grid.RowSpan="2" 
+                                Foreground="White" Background="#2ca243" BorderBrush="#107c10" 
+                                BorderThickness="3.2" ></Button>
+
+
+                    </Grid>
+                </Border>
+
+
+
+
+
+
+                <Border CornerRadius="200"></Border>
+
+
+
+            </Canvas>
+
+
+
+        </TabItem>
+    </TabControl>
+
+
+
+
+</Window>
